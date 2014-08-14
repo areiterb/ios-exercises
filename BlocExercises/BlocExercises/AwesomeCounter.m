@@ -18,12 +18,21 @@
         low = otherNumber;
         high = number;
     }
+    
     // Make into a While loop
+   
+    //NSMutableString *stringNumber = [@"" mutableCopy];
+    /*for (; low <= high; low++) {
+        [stringNumber appendFormat:@"%ld", (long)low]; */
+    
+    
     NSMutableString *stringNumber = [@"" mutableCopy];
-    for (; low <= high; low++) {
+    while (low <=high) {
         [stringNumber appendFormat:@"%ld", (long)low];
+        low++;
     }
     
+         
     return stringNumber;
 }
 
