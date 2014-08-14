@@ -16,8 +16,11 @@
  Example usage:
  
  @code
+ AwesomeCounter *counter = [AwesomeCounter new];
  NSString *numbers = [counter stringWithNumbersBetweenNumber:1 andOtherNumber:3];
  // numbers is "123"
+ numbers = [counter stringWithNumbersBetweenNumber:-2 andOtherNumber:1];
+ // numbers is "-2-1-01"
  @endcode
  
  @param number

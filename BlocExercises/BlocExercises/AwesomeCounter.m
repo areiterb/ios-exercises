@@ -12,7 +12,19 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @"";
+    NSInteger low = number;
+    NSInteger high = otherNumber;
+    if (high < low) {
+        low = otherNumber;
+        high = number;
+    }
+    // Make into a While loop
+    NSMutableString *stringNumber = [@"" mutableCopy];
+    for (; low <= high; low++) {
+        [stringNumber appendFormat:@"%ld", (long)low];
+    }
+    
+    return stringNumber;
 }
 
 @end
