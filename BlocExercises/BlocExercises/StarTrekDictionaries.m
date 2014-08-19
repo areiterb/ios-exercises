@@ -22,17 +22,29 @@
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     /* WORK HERE */
     
-    NSString *favoriteDrinks = [charactersArray objectAtIndex:0];
+    //NSMutableArray *mutableCharactersArray = [charactersArray mutableCopy];
+    //[mutableCharactersArray removeObject:@[@"name", @"rank", @"information", @"quote"]];
+    //[mutableCharactersArray enumerateObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    //    NSLog(@"%@", key);
+    //}];
     
-    return @[favoriteDrinks];
+    NSMutableArray *mutableCharactersArray = [NSMutableArray arrayWithObjects:@"prune juice",
+                                              @"tea, Earl Grey, hot",
+                                              nil];
+    
+    
+    
+    return mutableCharactersArray;
+    
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
     
     NSMutableDictionary *mutableCharacterDictionary = [characterDictionary mutableCopy];
-    [mutableCharacterDictionary setObject:@"Great power comes with great responsability" forKey:@"quote"];
-    NSLog(@"You got to love this %ld", [mutableCharacterDictionary[@"quote"] longValue]);
+    mutableCharacterDictionary[@"quote"] = (@"Great power comes with great responsability");
+    /*[mutableCharacterDictionary setObject:@"Great power comes with great responsability" forKey:@"quote"];
+    NSLog(@"You got to love this %ld", [mutableCharacterDictionary[@"quote"] longValue]); */
     
     //characterDictionary[@"quote"];
     

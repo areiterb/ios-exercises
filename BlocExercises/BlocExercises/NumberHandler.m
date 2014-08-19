@@ -13,9 +13,11 @@
 - (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
     /* WORK HERE */
     
-    [number intValue];
+    int bigNumber = [number integerValue];
+    NSInteger two = 2;
+    bigNumber = bigNumber * two;
     
-    return number;
+    return 0;
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
