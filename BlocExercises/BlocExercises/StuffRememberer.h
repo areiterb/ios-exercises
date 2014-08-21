@@ -33,6 +33,8 @@
  */
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember;
 
+@property NSArray* arrayToRememberNumberTwo;
+
 /**
  Provides the remembered mutable array.
  

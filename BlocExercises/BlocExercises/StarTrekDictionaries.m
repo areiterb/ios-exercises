@@ -22,17 +22,10 @@
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     /* WORK HERE */
     
-    //NSMutableArray *mutableCharactersArray = [charactersArray mutableCopy];
-    //[mutableCharactersArray removeObject:@[@"name", @"rank", @"information", @"quote"]];
-    //[mutableCharactersArray enumerateObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-    //    NSLog(@"%@", key);
-    //}];
-    
-    NSMutableArray *mutableCharactersArray = [NSMutableArray arrayWithObjects:@"prune juice",
-                                              @"tea, Earl Grey, hot",
-                                              nil];
-    
-    
+    NSMutableArray *mutableCharactersArray = [@[] mutableCopy];
+    [charactersArray enumerateObjectsUsingBlock:^(NSDictionary *character, NSUInteger idx, BOOL *stop) {
+       [mutableCharactersArray addObject:character[@"favorite drink"]];
+    }];    
     
     return mutableCharactersArray;
     
