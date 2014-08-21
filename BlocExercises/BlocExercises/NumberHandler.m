@@ -17,7 +17,7 @@
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
-    /* WORK HERE
+    /* WORK HERE */
     NSInteger low = number;
     NSInteger high = otherNumber;
     if (high < low) {
@@ -25,31 +25,29 @@
         high = number;
     }
     
-        NSArray *numberBetweenNumber =@[[NSValue valueWithRange: low],
-                                       [NSValue valueWithRange: high]
-                                        ];*/
-        
-    return nil;//numberBetweenNumber;
+    NSMutableArray *arrayNumber = [@[] mutableCopy];
+    for (; low <= high; low++) {
+        NSNumber* number = [NSNumber numberWithInt:low];
+        [arrayNumber addObject:number];
+
+    }
+    return arrayNumber;
 }
 
 -  (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
     /* WORK HERE */
     
-    [[arrayOfNumbers mutableCopy] sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSNumber *number1 = (NSNumber *)obj1;
-        NSNumber *number2 = (NSNumber *)obj2;
-        
-        int intValue1 = [number1 intValue];
-        int intValue2 = [number2 intValue];
-        
-        if (intValue1 > intValue2) {
-            return number2.integerValue;
-        } else {
-            return number1.integerValue;
-        }
-    }];
+    //NSNumber *min = [arrayOfNumbers valueForKey:@"@min.intValue"];
     
-     return 0;
+    
+    NSMutableArray *mutableArrayOfNumbers = [arrayOfNumbers mutableCopy];
+    NSNumber *lowest = [mutableArrayOfNumbers objectAtIndex:0];
+    for (int i = 0; i < [lowest intValue]; i++) {
+        if ([mutableArrayOfNumbers objectAtIndex:i] < mutableArrayOfNumbers) {
+            lowest = [mutableArrayOfNumbers objectAtIndex:i];
+        };
+    }
+     return [lowest intValue];
 }
 
 @end
