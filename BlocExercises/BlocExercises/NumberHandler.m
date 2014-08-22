@@ -39,15 +39,15 @@
     
     //NSNumber *min = [arrayOfNumbers valueForKey:@"@min.intValue"];
     
-    
-    NSMutableArray *mutableArrayOfNumbers = [arrayOfNumbers mutableCopy];
-    NSNumber *lowest = [mutableArrayOfNumbers objectAtIndex:0];
-    for (int i = 0; i < [lowest intValue]; i++) {
-        if ([mutableArrayOfNumbers objectAtIndex:i] < mutableArrayOfNumbers) {
-            lowest = [mutableArrayOfNumbers objectAtIndex:i];
-        };
+   // NSMutableArray *mutableArrayOfNumbers = [arrayOfNumbers mutableCopy];
+    NSInteger lowest = [[arrayOfNumbers objectAtIndex:0] integerValue];
+    for (int i = 1; i < arrayOfNumbers.count; i++) {
+        NSInteger currentValue = [[arrayOfNumbers objectAtIndex:i] integerValue];
+        if (currentValue < lowest) {
+            lowest = currentValue;
+        }
     }
-     return [lowest intValue];
+     return lowest;
 }
 
 @end
